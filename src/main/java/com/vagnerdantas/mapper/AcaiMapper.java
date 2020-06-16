@@ -17,8 +17,6 @@ public class AcaiMapper {
 
     public static AcaiDTO mapperToAcaiDTO(Acai event) {
         AcaiDTO acaiDTO = new AcaiDTO();
-        acaiDTO.setAction(event.getAction());
-        acaiDTO.setCreated_at(event.getCreatedAt());
         return acaiDTO;
     }
 

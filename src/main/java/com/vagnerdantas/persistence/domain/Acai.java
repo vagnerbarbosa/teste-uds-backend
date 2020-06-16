@@ -2,9 +2,12 @@ package com.vagnerdantas.persistence.domain;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.vagnerdantas.enumeration.FlavorEnum;
+import com.vagnerdantas.enumeration.SizeEnum;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -30,21 +33,39 @@ public class Acai {
     @Column(name = ID)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Column(name = ACTION)
-    private String action;
-    @Column(name = CREATED_AT)
-    private String createdAt;
-    @Column(name = NUMBER_ISSUE)
-    private String numberIssue;
 
-    public Acai() {
-        super();
+    @Enumerated
+    private SizeEnum size;
+
+    @Enumerated
+    private FlavorEnum flavor;
+
+    public Acai() { super(); }
+
+    public Acai(Integer id, SizeEnum size, FlavorEnum flavor) {
+        this.id = id;
+        this.size = size;
+        this.flavor = flavor;
     }
 
-    @JsonCreator
-    public Acai(@JsonProperty(ACTION) String action, @JsonProperty(CREATED_AT) String createdAt) {
-        this.action = action;
-        this.createdAt = createdAt;
+    public static String getID() {
+        return ID;
+    }
+
+    public static String getACTION() {
+        return ACTION;
+    }
+
+    public static String getCreatedAt() {
+        return CREATED_AT;
+    }
+
+    public static String getNumberIssue() {
+        return NUMBER_ISSUE;
+    }
+
+    public static String getAcaiTable() {
+        return ACAI_TABLE;
     }
 
     public Integer getId() {
@@ -55,43 +76,19 @@ public class Acai {
         this.id = id;
     }
 
-    public String getAction() {
-        return action;
+    public SizeEnum getSize() {
+        return size;
     }
 
-    public void setAction(String action) {
-        this.action = action;
+    public void setSize(SizeEnum size) {
+        this.size = size;
     }
 
-    public String getCreatedAt() {
-        return createdAt;
+    public FlavorEnum getFlavor() {
+        return flavor;
     }
 
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getNumberIssue() {
-        return numberIssue;
-    }
-
-    public void setNumberIssue(String numberIssue) {
-        this.numberIssue = numberIssue;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Acai)) return false;
-        Acai event = (Acai) o;
-        return Objects.equals(getId(), event.getId()) &&
-                Objects.equals(getAction(), event.getAction()) &&
-                Objects.equals(getCreatedAt(), event.getCreatedAt()) &&
-                Objects.equals(getNumberIssue(), event.getNumberIssue());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getAction(), getCreatedAt(), getNumberIssue());
+    public void setFlavor(FlavorEnum flavor) {
+        this.flavor = flavor;
     }
 }

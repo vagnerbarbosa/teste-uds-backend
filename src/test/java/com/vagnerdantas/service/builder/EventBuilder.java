@@ -20,9 +20,6 @@ public class EventBuilder {
         EventBuilder eventBuilder = new EventBuilder();
         eventBuilder.event = new Acai();
         eventBuilder.event.setId(0);
-        eventBuilder.event.setAction("opened");
-        eventBuilder.event.setCreatedAt("2020-03-25T19:40:02Z");
-        eventBuilder.event.setNumberIssue("5");
         return eventBuilder;
     }
 

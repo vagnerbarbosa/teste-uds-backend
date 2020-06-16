@@ -64,9 +64,6 @@ public class AcaiServiceImpl implements AcaiService {
                         Integer numberIssue = importantJson
                                 .read(JsonPath.builder().elementWithIndex(i).field(PAYLOAD).field(ISSUE).field(NUMBER).jsonPath());
 
-                        event.setAction(action);
-                        event.setCreatedAt(createAt);
-                        event.setNumberIssue(numberIssue.toString());
                         events.add(event);
                         y++;
                     }
