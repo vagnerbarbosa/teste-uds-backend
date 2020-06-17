@@ -22,13 +22,13 @@ Açaí API.
 ## API endpoints
 
 > http://localhost:8080/acais ** REQ.001 - Escolher açaí **
-- JSON Body example via POST `{ "size": "PEQUENO", "flavor": "KIWI" }`
+- JSON Body consumes example via POST `{ "size": "PEQUENO", "flavor": "KIWI" }`
 
 > http://localhost:8080/acais/{id} ** REQ.002 - Personalizar açaí **
-- JSON Body example via POST`[ "GRANOLA", "LEITE_NINHO", "PACOCA" ]`
+- JSON Body consumes example via POST`[ "GRANOLA", "LEITE_NINHO", "PACOCA" ]`
 
 > http://localhost:8080/acais/{id} ** REQ.003 - Montar pedido **
-- JSON Body example  via GET`{ "size": "Pequeno", "flavor": "Kiwi", "additionals": "Granola / Leite Ninho / Paçoca", "preparationTime": "00:13:00", "total": 16.00 }`
+- JSON Body produces example via GET`{ "size": "Pequeno", "flavor": "Kiwi", "additionals": "Granola / Leite Ninho / Paçoca", "preparationTime": "00:13:00", "total": 16.00 }`
 ## Running the tests
 
 - At the terminal, execute `mvn test` to run the tests.
