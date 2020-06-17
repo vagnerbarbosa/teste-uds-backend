@@ -27,7 +27,7 @@ Açaí API.
 > http://localhost:8080/acais/{id} ** REQ.002 - Personalizar açaí **
 - JSON Body example via POST`[ "GRANOLA", "LEITE_NINHO", "PACOCA" ]`
 
-> http://localhost:8080/acais/1 ** REQ.003 - Montar pedido **
+> http://localhost:8080/acais/{id} ** REQ.003 - Montar pedido **
 - JSON Body example  via GET`{ "size": "Pequeno", "flavor": "Kiwi", "additionals": "Granola / Leite Ninho / Paçoca", "preparationTime": "00:13:00", "total": 16.00 }`
 ## Running the tests
 
