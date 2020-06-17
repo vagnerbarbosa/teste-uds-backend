@@ -23,7 +23,7 @@ Açai API.
 
 - At the terminal, execute `mvn test` to run the tests.
 
-## About me:
+## About me
 - Vagner Barbosa
 - e-mail: contato@vagnerbarbosa.com
 
