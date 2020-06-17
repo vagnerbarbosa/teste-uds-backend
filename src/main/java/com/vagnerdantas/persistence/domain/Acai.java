@@ -1,17 +1,22 @@
 package com.vagnerdantas.persistence.domain;
 
+import com.vagnerdantas.enumeration.AdditionalEnum;
 import com.vagnerdantas.enumeration.FlavorEnum;
 import com.vagnerdantas.enumeration.SizeEnum;
 
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.time.LocalTime;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -43,14 +48,19 @@ public class Acai {
     @Column
     private BigDecimal total;
 
+    @ElementCollection
+    @Column(name="additional")
+    private List<AdditionalEnum> additional;
+
     public Acai() { super(); }
 
-    public Acai(Integer id, SizeEnum size, FlavorEnum flavor, LocalTime preparationTime, BigDecimal total) {
+    public Acai(Integer id, SizeEnum size, FlavorEnum flavor, LocalTime preparationTime, BigDecimal total, List<AdditionalEnum> additional) {
         this.id = id;
         this.size = size;
         this.flavor = flavor;
         this.preparationTime = preparationTime;
         this.total = total;
+        this.additional = additional;
     }
 
     public Integer getId() {
@@ -93,20 +103,11 @@ public class Acai {
         this.total = total;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Acai)) return false;
-        Acai acai = (Acai) o;
-        return Objects.equals(getId(), acai.getId()) &&
-                getSize() == acai.getSize() &&
-                getFlavor() == acai.getFlavor() &&
-                Objects.equals(getPreparationTime(), acai.getPreparationTime()) &&
-                Objects.equals(getTotal(), acai.getTotal());
+    public List<AdditionalEnum> getAdditional() {
+        return additional;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId(), getSize(), getFlavor(), getPreparationTime(), getTotal());
+    public void setAdditional(List<AdditionalEnum> additional) {
+        this.additional = additional;
     }
 }

@@ -1,5 +1,6 @@
 package com.vagnerdantas.controller;
 
+import com.vagnerdantas.enumeration.AdditionalEnum;
 import com.vagnerdantas.persistence.domain.Acai;
 import com.vagnerdantas.persistence.domain.AcaiDTO;
 import com.vagnerdantas.service.AcaiService;
@@ -11,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.websocket.server.PathParam;
+import java.util.List;
 
 /**
  * Copyright @author Vagner Dantas
@@ -31,6 +35,10 @@ public class AcaiController {
     @RequestMapping(value = ACAIS, method = RequestMethod.POST, consumes = APPLICATION_JSON, produces = APPLICATION_JSON)
     public MessageResponseDTO acaiPersist(@RequestBody AcaiDTO acai) {
         return acaiService.acaiPersist(acai);
+    }
+    @RequestMapping(value = "/acais/{id}", method = RequestMethod.POST, consumes = APPLICATION_JSON, produces = APPLICATION_JSON)
+    public MessageResponseDTO additionalPersist(@PathVariable(value = "id") Integer id, @RequestBody List<AdditionalEnum> list) {
+        return acaiService.additionalPersist(id, list);
     }
 
     @GetMapping(ACAI_ID)
