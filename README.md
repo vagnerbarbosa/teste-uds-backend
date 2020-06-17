@@ -1,4 +1,4 @@
-# teste-uds-backend
+# teste-uds-backend | Processo seletivo UDS Tecnologia - Java | Vagner Barbosa (contato@vagnerbarbosa.com)
 
 Açai API.
 
@@ -17,11 +17,10 @@ Açai API.
 - At the terminal, execute the command `docker pull postgres:9.6.17`;
 - Then run the command `docker run --publish 5432:5432 --name postgres -e POSTGRES_PASSWORD=123 -d postgres`
 - Already at the root of the project execute `mvn clean install`;
-- And finally, `java -jar target/github-webhook-api-0.0.1-SNAPSHOT.jar`
+- And finally, `java -jar target/teste-uds-backend-0.0.1-SNAPSHOT.jar`
 
 ## Running the tests
 
-- Start the application, execute the command `java -jar target/teste-uds-backend-0.0.1-SNAPSHOT.jar`
 - At the terminal, execute `mvn test` to run the tests.
 
 
