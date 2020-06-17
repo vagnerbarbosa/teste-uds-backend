@@ -35,6 +35,7 @@ public class AcaiController {
     public MessageResponseDTO acaiPersist(@RequestBody AcaiDTO acai) {
         return acaiService.acaiPersist(acai);
     }
+
     @RequestMapping(value = "/acais/{id}", method = RequestMethod.POST, consumes = APPLICATION_JSON, produces = APPLICATION_JSON)
     public MessageResponseDTO additionalPersist(@PathVariable(value = "id") Integer id, @RequestBody List<AdditionalEnum> list) {
         return acaiService.additionalPersist(id, list);

@@ -1,6 +1,6 @@
 # Processo seletivo UDS Tecnologia - Java
 
-Açai API.
+Açaí API.
 
 ### Main Technologies
 
@@ -19,6 +19,16 @@ Açai API.
 - Already at the root of the project execute `mvn clean install`;
 - And finally, `java -jar target/teste-uds-backend-0.0.1-SNAPSHOT.jar`
 
+## API endpoints
+
+> http://localhost:8080/acais ** REQ.001 - Escolher açaí **
+- JSON Body example via POST `{ "size": "PEQUENO", "flavor": "KIWI" }`
+
+> http://localhost:8080/acais/{id} ** REQ.002 - Personalizar açaí **
+- JSON Body example via POST`[ "GRANOLA", "LEITE_NINHO", "PACOCA" ]`
+
+> http://localhost:8080/acais/1 ** REQ.003 - Montar pedido **
+- JSON Body example  via GET`{ "size": "Pequeno", "flavor": "Kiwi", "additionals": "Granola / Leite Ninho / Paçoca", "preparationTime": "00:13:00", "total": 16.00 }`
 ## Running the tests
 
 - At the terminal, execute `mvn test` to run the tests.
