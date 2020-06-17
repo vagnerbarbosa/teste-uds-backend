@@ -1,4 +1,4 @@
-# teste-uds-backend | Processo seletivo UDS Tecnologia - Java | Vagner Barbosa (contato@vagnerbarbosa.com)
+# Processo seletivo UDS Tecnologia - Java
 
 Açai API.
 
@@ -22,6 +22,10 @@ Açai API.
 ## Running the tests
 
 - At the terminal, execute `mvn test` to run the tests.
+
+## About me:
+- Vagner Barbosa
+- e-mail: contato@vagnerbarbosa.com
 
 
 
