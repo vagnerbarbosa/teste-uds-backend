@@ -5,7 +5,6 @@ import com.vagnerdantas.enumeration.SizeEnum;
 import com.vagnerdantas.persistence.domain.Acai;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
