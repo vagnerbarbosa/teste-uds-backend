@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Copyright @author Vagner Dantas
  */
 public enum AdditionalEnum {
+
     @JsonProperty("GRANOLA")
     GRANOLA(1, "Granola"),
     @JsonProperty("PACOCA")

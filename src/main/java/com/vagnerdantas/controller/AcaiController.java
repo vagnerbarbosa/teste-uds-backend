@@ -1,8 +1,8 @@
 package com.vagnerdantas.controller;
 
 import com.vagnerdantas.enumeration.AdditionalEnum;
-import com.vagnerdantas.persistence.domain.Acai;
 import com.vagnerdantas.persistence.domain.AcaiDTO;
+import com.vagnerdantas.persistence.domain.AcaiResponseDTO;
 import com.vagnerdantas.service.AcaiService;
 import com.vagnerdantas.util.MessageResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 /**
@@ -42,7 +41,7 @@ public class AcaiController {
     }
 
     @GetMapping(ACAI_ID)
-    public Acai getAcai(@PathVariable(ID) Integer id) {
+    public AcaiResponseDTO getAcai(@PathVariable(ID) Integer id) {
         return acaiService.getAcai(id);
     }
 }

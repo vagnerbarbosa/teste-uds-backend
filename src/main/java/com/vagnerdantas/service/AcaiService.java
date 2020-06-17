@@ -1,8 +1,8 @@
 package com.vagnerdantas.service;
 
 import com.vagnerdantas.enumeration.AdditionalEnum;
-import com.vagnerdantas.persistence.domain.Acai;
 import com.vagnerdantas.persistence.domain.AcaiDTO;
+import com.vagnerdantas.persistence.domain.AcaiResponseDTO;
 import com.vagnerdantas.util.MessageResponseDTO;
 
 import java.util.List;
@@ -16,6 +16,6 @@ public interface AcaiService {
 
     MessageResponseDTO additionalPersist(Integer idAcai, List<AdditionalEnum> additional);
 
-    Acai getAcai(Integer id);
+    AcaiResponseDTO getAcai(Integer id);
 
 }

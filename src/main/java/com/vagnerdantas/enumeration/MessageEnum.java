@@ -19,5 +19,9 @@ public enum MessageEnum {
     /**
      * Houve algum problema desconhecido!
      */
-    MSG004
+    MSG004,
+    /**
+     * Açai personalizado com sucesso!
+     */
+    MSG005
 }
