@@ -4,7 +4,7 @@ Açai API.
 
 ### Main Technologies
 
-- [JDK 12](https://www.oracle.com/technetwork/java/javase/12-relnote-issues-5211422.html)
+- [JDK 8](https://www.oracle.com/technetwork/java/javase/14u-relnotes-6361871.html)
 - [Spring Boot](https://spring.io/projects/spring-boot)
 - [Spring Data](https://spring.io/projects/spring-data)
 - [Hibernate ORM](https://hibernate.org/orm/)
