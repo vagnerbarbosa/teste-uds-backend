@@ -1,7 +1,5 @@
 package com.vagnerdantas.persistence.domain;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.vagnerdantas.enumeration.FlavorEnum;
 import com.vagnerdantas.enumeration.SizeEnum;
 
@@ -12,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.math.BigDecimal;
+import java.time.LocalTime;
 import java.util.Objects;
 
 /**
@@ -24,9 +24,6 @@ public class Acai {
     private static final long serialVersionUID = -6371541105996068355L;
 
     public static final String ID = "id";
-    public static final String ACTION = "action";
-    public static final String CREATED_AT = "created_at";
-    public static final String NUMBER_ISSUE = "number_issue";
     public static final String ACAI_TABLE = "tb_acai";
 
     @Id
@@ -40,32 +37,20 @@ public class Acai {
     @Enumerated
     private FlavorEnum flavor;
 
+    @Column
+    private LocalTime preparationTime;
+
+    @Column
+    private BigDecimal total;
+
     public Acai() { super(); }
 
-    public Acai(Integer id, SizeEnum size, FlavorEnum flavor) {
+    public Acai(Integer id, SizeEnum size, FlavorEnum flavor, LocalTime preparationTime, BigDecimal total) {
         this.id = id;
         this.size = size;
         this.flavor = flavor;
-    }
-
-    public static String getID() {
-        return ID;
-    }
-
-    public static String getACTION() {
-        return ACTION;
-    }
-
-    public static String getCreatedAt() {
-        return CREATED_AT;
-    }
-
-    public static String getNumberIssue() {
-        return NUMBER_ISSUE;
-    }
-
-    public static String getAcaiTable() {
-        return ACAI_TABLE;
+        this.preparationTime = preparationTime;
+        this.total = total;
     }
 
     public Integer getId() {
@@ -90,5 +75,38 @@ public class Acai {
 
     public void setFlavor(FlavorEnum flavor) {
         this.flavor = flavor;
+    }
+
+    public LocalTime getPreparationTime() {
+        return preparationTime;
+    }
+
+    public void setPreparationTime(LocalTime preparationTime) {
+        this.preparationTime = preparationTime;
+    }
+
+    public BigDecimal getTotal() {
+        return total;
+    }
+
+    public void setTotal(BigDecimal total) {
+        this.total = total;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Acai)) return false;
+        Acai acai = (Acai) o;
+        return Objects.equals(getId(), acai.getId()) &&
+                getSize() == acai.getSize() &&
+                getFlavor() == acai.getFlavor() &&
+                Objects.equals(getPreparationTime(), acai.getPreparationTime()) &&
+                Objects.equals(getTotal(), acai.getTotal());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId(), getSize(), getFlavor(), getPreparationTime(), getTotal());
     }
 }

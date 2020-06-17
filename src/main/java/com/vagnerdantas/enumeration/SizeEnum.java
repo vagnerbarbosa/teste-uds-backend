@@ -1,9 +1,5 @@
 package com.vagnerdantas.enumeration;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 /**
  * Copyright @author Vagner Dantas
  */

@@ -1,18 +1,18 @@
 package com.vagnerdantas.controller;
+
+import com.github.tomakehurst.wiremock.WireMockServer;
 import com.vagnerdantas.enumeration.MessageEnum;
 import com.vagnerdantas.util.MessageUtil;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import org.junit.Test;
-import static org.hamcrest.Matchers.equalTo;
-import com.github.tomakehurst.wiremock.WireMockServer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import com.github.tomakehurst.wiremock.WireMockServer;
 
 import static io.restassured.RestAssured.given;
-import static org.junit.Assert.*;
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Copyright @author Vagner Dantas
