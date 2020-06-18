@@ -1,6 +1,6 @@
 # Açaí API - Java
 
-API Rest WebService with Spring Boot.
+Rest WebService with Spring Boot.
 
 ### Main Technologies
 
