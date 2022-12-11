@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * @author Vagner Dantas <vagner.dantas@ctis.com.br>
+ * @author Vagner Dantas <contato@vagnerbarbosa.com>
  * @since 26 de mar de 2020
  */
 @RunWith(MockitoJUnitRunner.class)
